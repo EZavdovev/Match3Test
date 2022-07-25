@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 /// <summary>
-/// Скрипт, отображения элемента таблицы рекордов
+/// РЎРєСЂРёРїС‚, РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° С‚Р°Р±Р»РёС†С‹ СЂРµРєРѕСЂРґРѕРІ
 /// </summary>
 public class RecordView : MonoBehaviour
 {
@@ -18,12 +18,12 @@ public class RecordView : MonoBehaviour
     [SerializeField]
     private Image currentRecordImage;
     /// <summary>
-    /// Метод, для заполнения данных элемента таблицы рекордов
+    /// РњРµС‚РѕРґ, РґР»СЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ РґР°РЅРЅС‹С… СЌР»РµРјРµРЅС‚Р° С‚Р°Р±Р»РёС†С‹ СЂРµРєРѕСЂРґРѕРІ
     /// </summary>
-    /// <param name="place">Место в таблице</param>
-    /// <param name="date">Дата появления в таблице</param>
-    /// <param name="score">количество заработанных очков</param>
-    /// <param name="isNewRecord">является ли это только что полученным рекордом</param>
+    /// <param name="place">РњРµСЃС‚Рѕ РІ С‚Р°Р±Р»РёС†Рµ</param>
+    /// <param name="date">Р”Р°С‚Р° РїРѕСЏРІР»РµРЅРёСЏ РІ С‚Р°Р±Р»РёС†Рµ</param>
+    /// <param name="score">РєРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°СЂР°Р±РѕС‚Р°РЅРЅС‹С… РѕС‡РєРѕРІ</param>
+    /// <param name="isNewRecord">СЏРІР»СЏРµС‚СЃСЏ Р»Рё СЌС‚Рѕ С‚РѕР»СЊРєРѕ С‡С‚Рѕ РїРѕР»СѓС‡РµРЅРЅС‹Рј СЂРµРєРѕСЂРґРѕРј</param>
     public void SetData(int place, string date, string score, bool isNewRecord)
     {
         placeLabel.text = $"{place}";
