@@ -1,35 +1,35 @@
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
-/// Скрипт отображения таблицы рекордов
+/// РЎРєСЂРёРїС‚ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ С‚Р°Р±Р»РёС†С‹ СЂРµРєРѕСЂРґРѕРІ
 /// </summary>
-    public class LeaderboardView : MonoBehaviour
+public class LeaderboardView : MonoBehaviour
+{
+    [SerializeField]
+    private RecordView resultViewPrefab;
+
+    [SerializeField]
+    private Transform resultsKeeper;
+
+    private int prefabsAmount;
+
+    private void OnEnable()
     {
-        [SerializeField]
-        private RecordView resultViewPrefab;
-
-        [SerializeField]
-        private Transform resultsKeeper;
-
-        private int prefabsAmount;
-
-        private void OnEnable()
+        prefabsAmount = Save.Instance.SavedDatas.Count;
+        for (int i = 0; i < prefabsAmount; i++)
         {
-            prefabsAmount = Save.Instance.SavedDatas.Count;
-            for (int i = 0; i < prefabsAmount; i++)
-            {
-                var tmp = Instantiate(resultViewPrefab, resultsKeeper);
-                tmp.SetData(i + 1, Save.Instance.SavedDatas[i].Date, Save.Instance.SavedDatas[i].Score, i + 1 == Save.Instance.CurrentRecordPos);
-            }
+            var tmp = Instantiate(resultViewPrefab, resultsKeeper);
+            tmp.SetData(i + 1, Save.Instance.SavedDatas[i].Date, Save.Instance.SavedDatas[i].Score, i + 1 == Save.Instance.CurrentRecordPos);
         }
+    }
 
-        private void OnDisable()
+    private void OnDisable()
+    {
+        for (int i = 0; i < prefabsAmount; i++)
         {
-            for (int i = 0; i < prefabsAmount; i++)
-            {
-                Destroy(resultsKeeper.GetChild(i).gameObject);
-            }
+            Destroy(resultsKeeper.GetChild(i).gameObject);
         }
+    }
 }
 
 
