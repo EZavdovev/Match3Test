@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Объект, который при появлений останавливает игровой процесс
+/// РћР±СЉРµРєС‚, РєРѕС‚РѕСЂС‹Р№ РїСЂРё РїРѕСЏРІР»РµРЅРёР№ РѕСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РёРіСЂРѕРІРѕР№ РїСЂРѕС†РµСЃСЃ
 /// </summary>
 public class PauseObject : MonoBehaviour
 {
