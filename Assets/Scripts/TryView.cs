@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 /// <summary>
-/// Отображение количества попыток в игре
+/// РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° РїРѕРїС‹С‚РѕРє РІ РёРіСЂРµ
 /// </summary>
 public class TryView : MonoBehaviour
 {
     private TextMeshProUGUI tryText;
 
-    private const string START_TEXT = "Количество попыток: ";
+    private const string START_TEXT = "РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїС‹С‚РѕРє: ";
     private void Awake()
     {
         tryText = GetComponent<TextMeshProUGUI>();
