@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 /// <summary>
-/// Отображение количества очков в игре
+/// РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° РѕС‡РєРѕРІ РІ РёРіСЂРµ
 /// </summary>
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class ScoreView : MonoBehaviour
 {
     private TextMeshProUGUI scoreText;
 
-    private const string START_TEXT = "Количество очков: ";
+    private const string START_TEXT = "РљРѕР»РёС‡РµСЃС‚РІРѕ РѕС‡РєРѕРІ: ";
     private void Awake()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
