@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 /// <summary>
-/// Кнопка, которая переключает не только экран, но и сцену
+/// РљРЅРѕРїРєР°, РєРѕС‚РѕСЂР°СЏ РїРµСЂРµРєР»СЋС‡Р°РµС‚ РЅРµ С‚РѕР»СЊРєРѕ СЌРєСЂР°РЅ, РЅРѕ Рё СЃС†РµРЅСѓ
 /// </summary>
 public class SceneChangeButton : ScreenChangeButton
 {
