@@ -48,25 +48,28 @@ public class Bubble : MonoBehaviour
     /// <summary>
     /// Данный метод меняет позицию шара в массиве
     /// </summary>
+    /// <param name="countWidthBubble">Количество шаров в ширину на поле</param>
+    /// <param name="countHeightBubble">Количество шаров в высоту на поле</param>
     /// <param name="xPos">нахождение шара в массиве по координате x</param>
     /// <param name="yPos">нахождение шара в массиве по координате y</param>
-    public void ChangePos(int xPos, int yPos)
+    public void ChangePos(int countWidthBubble, int countHeightBubble, int xPos, int yPos)
     {
-        changerPosition = StartCoroutine(ChangerPos(this.xPos, this.yPos, xPos, yPos));
+        changerPosition = StartCoroutine(ChangerPos(countWidthBubble, countHeightBubble, xPos, yPos));
         this.xPos = xPos;
         this.yPos = yPos;
     }
 
-    private IEnumerator ChangerPos(int startX, int startY, int endX, int endY)
+    private IEnumerator ChangerPos(int countWidthBubble, int countHeightBubble, int endX, int endY)
     {
-        Vector3 endPositon = transform.position - new Vector3((startX - endX) * bubbleRectTransform.rect.width, (startY - endY) * bubbleRectTransform.rect.height);
+        Vector3 endPositon = new Vector3((endX - countWidthBubble / 2) * bubbleRectTransform.rect.width + (1 - countWidthBubble % 2) * bubbleRectTransform.rect.width / 2, (endY - countHeightBubble / 2) * bubbleRectTransform.rect.height + (1 - countHeightBubble % 2) * bubbleRectTransform.rect.height / 2);
+
         float time = 0f;
-        Vector3 startPosition = transform.position;
+        Vector3 startPosition = transform.localPosition;
         yield return new WaitForSeconds(TIME_TO_CHANGE);
         while(time < TIME_TO_CHANGE)
         {
             time += Time.deltaTime;
-            transform.position = Vector3.Lerp(startPosition, endPositon, time / TIME_TO_CHANGE);
+            transform.localPosition = Vector3.Lerp(startPosition, endPositon, time / TIME_TO_CHANGE);
             yield return null;
         }
     }
