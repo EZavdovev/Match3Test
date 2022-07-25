@@ -385,6 +385,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1009568531}
   - component: {fileID: 1009568530}
+  - component: {fileID: 1009568532}
+  - component: {fileID: 1009568533}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -419,6 +421,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1009568532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009568529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d906d44e0a313004f8097c63f8976bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreOneBubble: 5
+  multiplyScore: 2
+--- !u!114 &1009568533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009568529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfab12d15e76e704b8176f3c2208016d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTry: 15
+  countBubbleForBonus: 3
+  scoreManager: {fileID: 1009568532}
 --- !u!1 &1565137114
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,10 +484,10 @@ RectTransform:
   m_Father: {fileID: 786831003}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.32250005, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.6900024, y: 0.00048828125}
-  m_SizeDelta: {x: 3.380005, y: 0}
+  m_AnchorMin: {x: 0.019444443, y: 0.04472917}
+  m_AnchorMax: {x: 1, y: 0.80200005}
+  m_AnchoredPosition: {x: -10.650024, y: -2.480713}
+  m_SizeDelta: {x: 21.3, y: -4.369812}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565137116
 MonoBehaviour:
@@ -520,5 +551,5 @@ MonoBehaviour:
   - {fileID: 1578453150, guid: 3085592b604e7ce48aba6c705798d402, type: 3}
   Panel: {fileID: 1565137115}
   Bubble: {fileID: 3257068808883420492, guid: 9a78abc853b869642845b74b139dd273, type: 3}
-  countHeightBubble: 11
-  countWidthBubble: 13
+  countHeightBubble: 15
+  countWidthBubble: 11

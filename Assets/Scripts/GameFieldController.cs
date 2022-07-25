@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class GameFieldController : MonoBehaviour
 {
+    public static event Action<int> OnCountDestroyBubble = delegate { };
+    public static event Action OnFieldEmpty = delegate { };
+
     [SerializeField]
     private List<Sprite> allSpritesBubble = new List<Sprite>();
     [SerializeField]
@@ -22,9 +26,14 @@ public class GameFieldController : MonoBehaviour
 
     private List<Bubble> bubblesForDestroy = new List<Bubble>();
 
+    private Coroutine changerFieldTimer;
+    private bool isChanging;
+
     // Для проверки, только той области с которой начинаются лопания шариков
     private int leftIndexForCheck;
     private int downIndexForCheck;
+
+    private const float TIME_TO_CHANGE = 0.2f;
 
 
     private void Awake()
@@ -35,11 +44,16 @@ public class GameFieldController : MonoBehaviour
     private void OnEnable()
     {
         Bubble.OnBubbleClick += UpdateField;
+        isChanging = false;
     }
 
     private void OnDisable()
     {
         Bubble.OnBubbleClick -= UpdateField;
+        if(changerFieldTimer != null)
+        {
+            StopCoroutine(changerFieldTimer);
+        }
     }
 
     private void InitField()
@@ -70,7 +84,7 @@ public class GameFieldController : MonoBehaviour
                 float xPos = (j - countWidthBubble / 2) * rectBubble.rect.width + (1 - countWidthBubble % 2) * rectBubble.rect.width / 2;
                 float yPos = (i - countHeightBubble / 2) * rectBubble.rect.height + (1 - countHeightBubble % 2) * rectBubble.rect.height / 2;
                 bubble.transform.position += new Vector3(xPos, yPos, 0f);
-                bubble.Init(j, i, allSpritesBubble[Random.Range(0, allSpritesBubble.Count)]);
+                bubble.Init(j, i, allSpritesBubble[UnityEngine.Random.Range(0, allSpritesBubble.Count)]);
                 fieldBubbles[i, j] = bubble;
             }
         }
@@ -78,13 +92,32 @@ public class GameFieldController : MonoBehaviour
 
     private void UpdateField(int startX, int startY, Sprite spriteChecker)
     {
+        if (isChanging)
+        {
+            return;
+        }
+        isChanging = true;
         leftIndexForCheck = countWidthBubble;
         downIndexForCheck = countHeightBubble;
         SearchCombinationBubbles(startX, startY, spriteChecker);
+        OnCountDestroyBubble(bubblesForDestroy.Count);
         DestroyFoundBubbles();
         UpdatePositionField();
-
+        CheckFieldEmpty();
+        changerFieldTimer = StartCoroutine(ChangeFieldTimer());
     }
+
+    private IEnumerator ChangeFieldTimer()
+    {
+        float time = 0f;
+        while (time < TIME_TO_CHANGE)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+        isChanging = false;
+    }
+
     private void SearchCombinationBubbles(int startX, int startY, Sprite spriteChecker)
     {
         if (startX < 0 || startX >= countWidthBubble || startY < 0 || startY >= countHeightBubble)
@@ -172,5 +205,13 @@ public class GameFieldController : MonoBehaviour
                 XPosOffset++;
             }
         } 
+    }
+
+    private void CheckFieldEmpty()
+    {
+        if(fieldBubbles[0,0] == null)
+        {
+            OnFieldEmpty();
+        }
     }
 }

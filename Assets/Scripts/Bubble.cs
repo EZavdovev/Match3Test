@@ -43,7 +43,7 @@ public class Bubble : MonoBehaviour
     {
         this.xPos = xPos;
         this.yPos = yPos;
-        this.image.sprite = sprite;
+        image.sprite = sprite;
     }
     /// <summary>
     /// ƒанный метод мен€ет позицию шара в массиве
@@ -78,7 +78,7 @@ public class Bubble : MonoBehaviour
     /// <returns></returns>
     public bool SpriteCheck(Sprite sprite)
     {
-        return sprite == this.image.sprite;
+        return sprite == image.sprite;
     }
     private void BubbleClick()
     {
