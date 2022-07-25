@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Контроллер, который занимается обработкой игрового поля
+/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ, РєРѕС‚РѕСЂС‹Р№ Р·Р°РЅРёРјР°РµС‚СЃСЏ РѕР±СЂР°Р±РѕС‚РєРѕР№ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 /// </summary>
 public class GameFieldController : MonoBehaviour
 {
@@ -26,7 +26,7 @@ public class GameFieldController : MonoBehaviour
 
     private List<Bubble> bubblesForDestroy = new List<Bubble>();
 
-    // Для проверки, только той области с которой начинаются лопания шариков
+    // Р”Р»СЏ РїСЂРѕРІРµСЂРєРё, С‚РѕР»СЊРєРѕ С‚РѕР№ РѕР±Р»Р°СЃС‚Рё СЃ РєРѕС‚РѕСЂРѕР№ РЅР°С‡РёРЅР°СЋС‚СЃСЏ Р»РѕРїР°РЅРёСЏ С€Р°СЂРёРєРѕРІ
     private int leftIndexForCheck;
     private int downIndexForCheck;
 
@@ -57,7 +57,7 @@ public class GameFieldController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Данный префаб не подходит для создания поля");
+            Debug.LogError("Р”Р°РЅРЅС‹Р№ РїСЂРµС„Р°Р± РЅРµ РїРѕРґС…РѕРґРёС‚ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РїРѕР»СЏ");
             return;
         }
         for (int i = 0; i < countHeightBubble; i++)
@@ -67,7 +67,7 @@ public class GameFieldController : MonoBehaviour
                 PoolManager.GetGameObjectFromPool(Bubble.gameObject, Panel.transform).TryGetComponent<Bubble>(out Bubble bubble);
                 if (bubble == null)
                 {
-                    Debug.LogError("Данный префаб не подходит для создания поля");
+                    Debug.LogError("Р”Р°РЅРЅС‹Р№ РїСЂРµС„Р°Р± РЅРµ РїРѕРґС…РѕРґРёС‚ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РїРѕР»СЏ");
                     return;
                 }
                 float xPos = (j - countWidthBubble / 2) * rectBubble.rect.width + (1 - countWidthBubble % 2) * rectBubble.rect.width / 2;
@@ -128,13 +128,13 @@ public class GameFieldController : MonoBehaviour
         int XPosOffset = 0;
         for(int i = leftIndexForCheck; i < countWidthBubble; i++)
         {
-            bool isFirstEmptyInArray = false; // Переменная для поиска первого вхождения пустых мест на поле
-            bool isFirstNotEmptyInArray = false; // Переменная для поиска первого вхождения не пустых мест на поле
-            bool isSecondNotEmptyInArray = false; // Переменная для поиска второго вхождения не пустых мест, для того чтобы их начать опускать на пустые места
+            bool isFirstEmptyInArray = false; // РџРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РїРѕРёСЃРєР° РїРµСЂРІРѕРіРѕ РІС…РѕР¶РґРµРЅРёСЏ РїСѓСЃС‚С‹С… РјРµСЃС‚ РЅР° РїРѕР»Рµ
+            bool isFirstNotEmptyInArray = false; // РџРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РїРѕРёСЃРєР° РїРµСЂРІРѕРіРѕ РІС…РѕР¶РґРµРЅРёСЏ РЅРµ РїСѓСЃС‚С‹С… РјРµСЃС‚ РЅР° РїРѕР»Рµ
+            bool isSecondNotEmptyInArray = false; // РџРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РїРѕРёСЃРєР° РІС‚РѕСЂРѕРіРѕ РІС…РѕР¶РґРµРЅРёСЏ РЅРµ РїСѓСЃС‚С‹С… РјРµСЃС‚, РґР»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ РёС… РЅР°С‡Р°С‚СЊ РѕРїСѓСЃРєР°С‚СЊ РЅР° РїСѓСЃС‚С‹Рµ РјРµСЃС‚Р°
             int yPosOffset = 0;
             for(int j = downIndexForCheck; j < countHeightBubble; j++)
             {
-                if(isFirstEmptyInArray && !isSecondNotEmptyInArray) // Если нашли пустые места, но не нашли не пустые элементы сверху, то увеличиваем шаг смещения вниз
+                if(isFirstEmptyInArray && !isSecondNotEmptyInArray) // Р•СЃР»Рё РЅР°С€Р»Рё РїСѓСЃС‚С‹Рµ РјРµСЃС‚Р°, РЅРѕ РЅРµ РЅР°С€Р»Рё РЅРµ РїСѓСЃС‚С‹Рµ СЌР»РµРјРµРЅС‚С‹ СЃРІРµСЂС…Сѓ, С‚Рѕ СѓРІРµР»РёС‡РёРІР°РµРј С€Р°Рі СЃРјРµС‰РµРЅРёСЏ РІРЅРёР·
                 {
                     yPosOffset++;
                 }
@@ -172,7 +172,7 @@ public class GameFieldController : MonoBehaviour
                 }
             }
 
-            if (!isFirstNotEmptyInArray && downIndexForCheck == 0) // Если столбец пустой, то смещаем влево столбцы
+            if (!isFirstNotEmptyInArray && downIndexForCheck == 0) // Р•СЃР»Рё СЃС‚РѕР»Р±РµС† РїСѓСЃС‚РѕР№, С‚Рѕ СЃРјРµС‰Р°РµРј РІР»РµРІРѕ СЃС‚РѕР»Р±С†С‹
             {
                 XPosOffset++;
             }
