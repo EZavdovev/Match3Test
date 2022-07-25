@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Кнопка выхода
+/// РљРЅРѕРїРєР° РІС‹С…РѕРґР°
 /// </summary>
 public class ExitButton : AbstractButtonAction
 {
