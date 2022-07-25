@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
-/// Кнопка для переключения экрана
+/// РљРЅРѕРїРєР° РґР»СЏ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ СЌРєСЂР°РЅР°
 /// </summary>
 public class ScreenChangeButton : AbstractButtonAction
 {
