@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
-/// Класс, который описывает игровой шар
+/// РљР»Р°СЃСЃ, РєРѕС‚РѕСЂС‹Р№ РѕРїРёСЃС‹РІР°РµС‚ РёРіСЂРѕРІРѕР№ С€Р°СЂ
 /// </summary>
 [RequireComponent(typeof(Image))]
 [RequireComponent(typeof(Button))]
@@ -34,11 +34,11 @@ public class Bubble : MonoBehaviour
         animator = GetComponent<Animator>();
     }
     /// <summary>
-    /// Данный метод инициализирует данные шара
+    /// Р”Р°РЅРЅС‹Р№ РјРµС‚РѕРґ РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РґР°РЅРЅС‹Рµ С€Р°СЂР°
     /// </summary>
-    /// <param name="xPos">нахождение шара в массиве по координате x</param>
-    /// <param name="yPos">нахождение шара в массиве по координате y</param>
-    /// <param name="sprite">изображение самого шара</param>
+    /// <param name="xPos">РЅР°С…РѕР¶РґРµРЅРёРµ С€Р°СЂР° РІ РјР°СЃСЃРёРІРµ РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Рµ x</param>
+    /// <param name="yPos">РЅР°С…РѕР¶РґРµРЅРёРµ С€Р°СЂР° РІ РјР°СЃСЃРёРІРµ РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Рµ y</param>
+    /// <param name="sprite">РёР·РѕР±СЂР°Р¶РµРЅРёРµ СЃР°РјРѕРіРѕ С€Р°СЂР°</param>
     public void Init(int xPos, int yPos, Sprite sprite)
     {
         this.xPos = xPos;
@@ -46,12 +46,12 @@ public class Bubble : MonoBehaviour
         image.sprite = sprite;
     }
     /// <summary>
-    /// Данный метод меняет позицию шара в массиве
+    /// Р”Р°РЅРЅС‹Р№ РјРµС‚РѕРґ РјРµРЅСЏРµС‚ РїРѕР·РёС†РёСЋ С€Р°СЂР° РІ РјР°СЃСЃРёРІРµ
     /// </summary>
-    /// <param name="countWidthBubble">Количество шаров в ширину на поле</param>
-    /// <param name="countHeightBubble">Количество шаров в высоту на поле</param>
-    /// <param name="xPos">нахождение шара в массиве по координате x</param>
-    /// <param name="yPos">нахождение шара в массиве по координате y</param>
+    /// <param name="countWidthBubble">РљРѕР»РёС‡РµСЃС‚РІРѕ С€Р°СЂРѕРІ РІ С€РёСЂРёРЅСѓ РЅР° РїРѕР»Рµ</param>
+    /// <param name="countHeightBubble">РљРѕР»РёС‡РµСЃС‚РІРѕ С€Р°СЂРѕРІ РІ РІС‹СЃРѕС‚Сѓ РЅР° РїРѕР»Рµ</param>
+    /// <param name="xPos">РЅР°С…РѕР¶РґРµРЅРёРµ С€Р°СЂР° РІ РјР°СЃСЃРёРІРµ РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Рµ x</param>
+    /// <param name="yPos">РЅР°С…РѕР¶РґРµРЅРёРµ С€Р°СЂР° РІ РјР°СЃСЃРёРІРµ РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Рµ y</param>
     public void ChangePos(int countWidthBubble, int countHeightBubble, int xPos, int yPos)
     {
         changerPosition = StartCoroutine(ChangerPos(countWidthBubble, countHeightBubble, xPos, yPos));
@@ -75,9 +75,9 @@ public class Bubble : MonoBehaviour
     }
     
     /// <summary>
-    /// Сравнение спрайта с другим шаром
+    /// РЎСЂР°РІРЅРµРЅРёРµ СЃРїСЂР°Р№С‚Р° СЃ РґСЂСѓРіРёРј С€Р°СЂРѕРј
     /// </summary>
-    /// <param name="sprite">спрайт другого шара</param>
+    /// <param name="sprite">СЃРїСЂР°Р№С‚ РґСЂСѓРіРѕРіРѕ С€Р°СЂР°</param>
     /// <returns></returns>
     public bool SpriteCheck(Sprite sprite)
     {
@@ -100,7 +100,7 @@ public class Bubble : MonoBehaviour
         }
     }
     /// <summary>
-    /// Метод, для уничтожения шара
+    /// РњРµС‚РѕРґ, РґР»СЏ СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ С€Р°СЂР°
     /// </summary>
     public void DestroyBubble()
     {
