@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Скрипт, который занимается открытием окон по окончанию игры
+/// РЎРєСЂРёРїС‚, РєРѕС‚РѕСЂС‹Р№ Р·Р°РЅРёРјР°РµС‚СЃСЏ РѕС‚РєСЂС‹С‚РёРµРј РѕРєРѕРЅ РїРѕ РѕРєРѕРЅС‡Р°РЅРёСЋ РёРіСЂС‹
 /// </summary>
 public class EndGameScreenOpener : MonoBehaviour
 {
