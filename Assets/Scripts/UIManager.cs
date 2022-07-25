@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
-    /// <summary>
-    /// менеджер для работы с игровым интерфейсом
-    /// </summary>
+/// <summary>
+/// РјРµРЅРµРґР¶РµСЂ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РёРіСЂРѕРІС‹Рј РёРЅС‚РµСЂС„РµР№СЃРѕРј
+/// </summary>
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
@@ -25,9 +23,9 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     /// <summary>
-    /// Меняет текущий экран на следующий
+    /// РњРµРЅСЏРµС‚ С‚РµРєСѓС‰РёР№ СЌРєСЂР°РЅ РЅР° СЃР»РµРґСѓСЋС‰РёР№
     /// </summary>
-    /// <param name="nextScreen">следующий экран</param>
+    /// <param name="nextScreen">СЃР»РµРґСѓСЋС‰РёР№ СЌРєСЂР°РЅ</param>
     public void ChangeScreen(GameObject nextScreen)
     {
         currentScreen.SetActive(false);
