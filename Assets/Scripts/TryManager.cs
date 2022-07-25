@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Контроллер числа попыток игрока
+/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ С‡РёСЃР»Р° РїРѕРїС‹С‚РѕРє РёРіСЂРѕРєР°
 /// </summary>
 public class TryManager : MonoBehaviour
 {
