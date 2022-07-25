@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Контроллер получения очков
+/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ РїРѕР»СѓС‡РµРЅРёСЏ РѕС‡РєРѕРІ
 /// </summary>
 public class ScoreManager : MonoBehaviour
 {
@@ -32,9 +32,9 @@ public class ScoreManager : MonoBehaviour
         GameFieldController.OnCountDestroyBubble -= AddScore;
     }
     /// <summary>
-    /// Добавляет количество очков, по определенной формуле
+    /// Р”РѕР±Р°РІР»СЏРµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕС‡РєРѕРІ, РїРѕ РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ С„РѕСЂРјСѓР»Рµ
     /// </summary>
-    /// <param name="countBubble">число, которое конвертируется в очки</param>
+    /// <param name="countBubble">С‡РёСЃР»Рѕ, РєРѕС‚РѕСЂРѕРµ РєРѕРЅРІРµСЂС‚РёСЂСѓРµС‚СЃСЏ РІ РѕС‡РєРё</param>
     public void AddScore(int countBubble)
     {
         score += (long)Mathf.Pow((scoreOneBubble * countBubble), multiplyScore);
