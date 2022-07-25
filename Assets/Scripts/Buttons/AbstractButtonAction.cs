@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
-/// Абстрактный класс, для описания действия для кнопки
+/// РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ, РґР»СЏ РѕРїРёСЃР°РЅРёСЏ РґРµР№СЃС‚РІРёСЏ РґР»СЏ РєРЅРѕРїРєРё
 /// </summary>
 [RequireComponent(typeof(Button))]
 public abstract class AbstractButtonAction : MonoBehaviour
@@ -15,7 +15,7 @@ public abstract class AbstractButtonAction : MonoBehaviour
         button.onClick.AddListener(OnButtonClick);
     }
     /// <summary>
-    /// Действие, которое выполняется при нажатии кнопки
+    /// Р”РµР№СЃС‚РІРёРµ, РєРѕС‚РѕСЂРѕРµ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё
     /// </summary>
     protected abstract void OnButtonClick();
 
