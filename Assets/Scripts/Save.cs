@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using System;
 /// <summary>
-/// Скрипт, который занимается сохранением и считыванием таблицы рекордов с файла
+/// РЎРєСЂРёРїС‚, РєРѕС‚РѕСЂС‹Р№ Р·Р°РЅРёРјР°РµС‚СЃСЏ СЃРѕС…СЂР°РЅРµРЅРёРµРј Рё СЃС‡РёС‚С‹РІР°РЅРёРµРј С‚Р°Р±Р»РёС†С‹ СЂРµРєРѕСЂРґРѕРІ СЃ С„Р°Р№Р»Р°
 /// </summary>
 public class Save : MonoBehaviour
 {
