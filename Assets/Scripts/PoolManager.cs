@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Пул для появления и уничтожения объектов
+/// РџСѓР» РґР»СЏ РїРѕСЏРІР»РµРЅРёСЏ Рё СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ РѕР±СЉРµРєС‚РѕРІ
 /// </summary>
 public class PoolManager : MonoBehaviour
 {
@@ -18,10 +18,10 @@ public class PoolManager : MonoBehaviour
         poolObjects.Clear();
     }
     /// <summary>
-    /// Позволяет достать объект из пула
+    /// РџРѕР·РІРѕР»СЏРµС‚ РґРѕСЃС‚Р°С‚СЊ РѕР±СЉРµРєС‚ РёР· РїСѓР»Р°
     /// </summary>
-    /// <param name="prefab">префаб объекта, который необходимо достать</param>
-    /// <param name="position">позиция, куда нужно доставить объект</param>
+    /// <param name="prefab">РїСЂРµС„Р°Р± РѕР±СЉРµРєС‚Р°, РєРѕС‚РѕСЂС‹Р№ РЅРµРѕР±С…РѕРґРёРјРѕ РґРѕСЃС‚Р°С‚СЊ</param>
+    /// <param name="position">РїРѕР·РёС†РёСЏ, РєСѓРґР° РЅСѓР¶РЅРѕ РґРѕСЃС‚Р°РІРёС‚СЊ РѕР±СЉРµРєС‚</param>
     /// <returns></returns>
     public static GameObject GetGameObjectFromPool(GameObject prefab, Transform position)
     {
@@ -50,9 +50,9 @@ public class PoolManager : MonoBehaviour
         }
     }
     /// <summary>
-    /// Возвращает объект в пул
+    /// Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕР±СЉРµРєС‚ РІ РїСѓР»
     /// </summary>
-    /// <param name="target">объект, который нужно вернуть</param>
+    /// <param name="target">РѕР±СЉРµРєС‚, РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ РІРµСЂРЅСѓС‚СЊ</param>
     public static void PutGameObjectToPool(GameObject target)
     {
         target.SetActive(false);
